@@ -1,0 +1,238 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif; 
+}
+body {
+    background-image: url(assets/img-fundo.webp);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    backdrop-filter: blur(5px);
+    min-height: 100vh;
+    overflow: hidden;
+    
+}
+header {
+    margin-right: 350px;
+}
+header button{
+    padding: 10px 20px;
+    background-color: #f8f9fa52;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+
+#pesquisa{
+    flex: 1;
+    background-color: #f8f9fa52;
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+.navegacao {
+    margin-right: 350px;
+    padding-left: 20px;
+}
+.navegacao button {
+    top: 20px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    color: white;
+    padding: 10px 20px;
+    background-color: #067cf3ae;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    cursor: pointer;
+    z-index: 1001;
+}
+.navegacao button:hover {
+    background-color: #067cf3;
+    transition: 0.5s;
+}
+#btn-mostrar-favoritos {
+    background-color: #ff4d4d;
+    color: white;
+    padding: 10px 20px;
+    margin-left: 18px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    
+}
+#btn-mostrar-favoritos:hover {
+    background-color: #ff1a1a;
+    transition: 0.5s;
+}
+#pokemon-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    padding: 20px;
+    margin-right: 350px;
+    overflow-y: auto;
+    height: calc(100vh - 150px);
+    overflow-x: hidden;
+}
+#pokemon-list::-webkit-scrollbar {
+    width: 8px;
+}
+#pokemon-list::-webkit-scrollbar-thumb {
+    background-color: rgba(0, 0, 0, 0.2);
+    border-radius: 4px;
+}
+.pokemon-card {
+    background-color: #f8f9fa52;
+    border-radius: 15px;
+    padding: 15px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s;
+    cursor: pointer;
+    margin-bottom: 30px;
+    position: relative;
+}
+.pokemon-card:hover {
+    transform: scale(1.05);
+}
+.pokemon-card img {
+    width: 120px;
+    height: 120px;
+}
+.pokemon-card h3 {
+    text-transform: capitalize; /* Deixa a primeira letra maiúscula */
+    margin: 10px 0;
+    color: #333;
+}
+.btn-favorito {
+   position: absolute;
+   top: 10px;
+   right: 10px;
+   background: none;
+   border: none;
+   font-size: 1.2rem;
+   cursor: pointer;
+   transition: transform 0.2s;
+   z-index: 10;
+   color: #ccc;
+}
+.btn-favorito.ativo {
+    color: #ffca28; /* Amarelo quando favorito */
+    text-shadow: 0 0 5px rgba(0,0,0,0.2);
+}
+.btn-favorito:hover {
+    transform: scale(1.3);
+}
+#detalhes {
+    font-size:20px;
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 350px;
+    height: 100vh;
+
+    background-color: #f8f9fa52;
+    backdrop-filter: blur(15px);
+    z-index: 1000;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    padding-top: 20px;
+}
+.detalhes-header{
+    margin: 0;
+    width: 100%;
+    text-align: center;
+    margin-top: 200px;
+}
+.detalhes-header img {
+    width: 180px;
+    height: auto;
+    display: block;
+    margin: 0 auto 20px;
+}
+.btn-fechar{
+    position: absolute;
+    top:20px;
+    left: 20px;
+    background: none;
+    border: 1px solid #0f0b0b;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+}
+.detalhes-info {
+    margin-left: 0;
+    width: 100%;
+    text-align: center;
+}
+.detalhes-container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+@media (max-width: 768px) {
+   
+    header {
+        margin-right: 0;
+        display: flex;
+        flex-wrap: wrap; 
+        justify-content: center;
+        padding: 10px;
+        gap: 5px;
+    }
+
+    #pesquisa {
+        width: 100%; 
+        margin: 5px 0;
+    }
+    .navegacao {
+        margin-right: 0;
+        display: flex;
+        justify-content: center;
+        padding: 5px;
+    }
+
+    #pokemon-list {
+        margin-right: 0;
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    }
+    #pokemon-card{
+        margin-bottom: 30px;
+    }
+
+    #detalhes {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0; 
+        width: 100%;
+        height: 100vh;
+        z-index: 2000;
+       
+    }
+
+    #detalhes.ativo {
+        display: flex;
+        width: 100%;
+        height: 100vh;
+        
+    }
+    #btn-mostrar-favoritos {
+        margin-left: 0;
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+}
