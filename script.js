@@ -66,6 +66,7 @@ function mostrarDetalhesPokemon(pokemon) {
                 <h2>${pokemon.name.toUpperCase()}</h2>
             </div>
             <div class= "detalhes-info">
+            <p><strong>ID:</strong> ${pokemon.id}</p>
             <p><strong>Tipos:</strong> ${tipos}</p>
                 <p><strong>Altura:</strong> ${altura} m</p>
                 <p><strong>Peso:</strong> ${peso} kg</p>
