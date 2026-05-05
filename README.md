@@ -24,4 +24,4 @@ Uma Pokédex interativa desenvolvida como projeto prático para a disciplina de 
 1. Faça o clone deste repositório:
    ```bash
    git clone https://github.com/Leandersonleox/pokedexWeb.git
-2. Abra o arquivo **index.html** em seu navegador.
+2. Abra o arquivo `index.html` em seu navegador.
